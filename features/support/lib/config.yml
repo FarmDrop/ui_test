@@ -1,0 +1,57 @@
+
+---
+next: {
+    capybara_base_url: 'http://next.farmdrop.com',
+    card_visa_mc: '4706750000000025',
+    card_amex: 'test_amex_card_number_goes_here',
+    card_holder_name: 'random_regression_user',
+    sur_name: 'test',
+    card_exp_month: '06',
+    card_exp_year: '2019',
+    cvv: '123',
+    password: 'Test1234x',
+    user01: 'qa+1@farmdrop.co.uk',
+    name01: 'I_am',
+    sur_name01: '_one',
+    user02: 'qa+2@farmdrop.co.uk',
+    name02: 'I_am',
+    sur_name02: '_two',
+    post_code: 'SE164DG'
+}
+
+dev:  {
+    capybara_base_url: 'http://dev.farmdrop.com',
+    card_visa_mc: '4706750000000025',
+    card_amex: 'test_amex_card_number_goes_here',
+    card_holder_name: 'random_regression_user',
+    sur_name: 'test',
+    card_exp_month: '06',
+    card_exp_year: '2019',
+    cvv: '123',
+    password: 'Test1234x',
+    user01: 'qa+1@farmdrop.co.uk',
+    name01: 'I_am',
+    sur_name01: '_one',
+    user02: 'qa+2@farmdrop.co.uk',
+    name02: 'I_am',
+    sur_name02: '_two',
+    post_code: 'SE164DG'
+}
+
+prod:  {
+    capybara_base_url: 'http://www.farmdrop.com',
+    card_no: 'Live_ card_details_goes_here',
+    card_holder_name: 'random_regression_user',
+    sur_name: 'test',
+    card_exp_month: '06',
+    card_exp_year: '2019',
+    cvv: '123',
+    password: 'Test1234x',
+    user01: 'qa+1@farmdrop.co.uk',
+    name01: 'I_am',
+    sur_name01: '_one',
+    user02: 'qa+2@farmdrop.co.uk',
+    name02: 'I_am',
+    sur_name02: '_two',
+    post_code: 'SE164DG'
+}
