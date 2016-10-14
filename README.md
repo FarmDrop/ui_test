@@ -4,8 +4,11 @@ For Headless capybara-webkit:
 
 
 `brew install qt`
+
 `brew linkapps qt`
+
 After that `which qmake` should comes with (/usr/local/bin/qmake)
+
 
 `bundle update` 
 
@@ -13,6 +16,7 @@ After that `which qmake` should comes with (/usr/local/bin/qmake)
 For Firefox:
 
 https://github.com/mozilla/geckodriver/releases
+
 export path to make geckodriver available 
 
 For Chrome:
@@ -24,6 +28,9 @@ http://chromedriver.storage.googleapis.com/index.html
 To run tests:
 
 `cucumber TEST_BROWSER=chrome` 
+
 or `cucumber TEST_BROWSER=safari` 
+
 or `cucumber` (dafult)
-or `cucumber TEST_BROWSER=headless` 
+
+or `cucumber TEST_BROWSER=headless` (@wip)
