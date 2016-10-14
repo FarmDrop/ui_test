@@ -7,7 +7,7 @@ module LoginSteps
         click_on 'Sign up or Log in' unless @url_login.to_s.include?('login')
         fill_in('email', :with => name)
         fill_in('password', :with => password)
-        find(:button, 'Login').click
+        find(:button, 'Let me see the goods').click
     end
 
     def signup(user = false, password = Configuration['password'] , postcode = Configuration['post_code'])
@@ -18,10 +18,6 @@ module LoginSteps
             time = Time.new
             user = 'qa+' + time.usec.to_s + time.yday.to_s + '@farmdrop.com'
         end
-        
-        # time = Time.new
-        # temp_user = 'qa+' + time.usec.to_s + time.yday.to_s + '@farmdrop.co.uk'
-        # user = temp_user unless user?
 
         fill_in('user_sign_up_form[email]', :with => user)
         fill_in('user_sign_up_form[password]', :with => password)
@@ -30,13 +26,11 @@ module LoginSteps
     end
 
     def logout
-        sleep 3
-        find(:link,'fh navigation-main-user-link').click
-        #find(:link,'navigation-main-login-icon').click
-        #click_link('fh navigation-main-user-link')
-        sleep 3
+        sleep 1
+        find(:xpath,"//a[@class='navigation-main-login-icon']").click
+        sleep 1
         click_on 'logout'
-        sleep 5
+        sleep 1
     end
 end
 
