@@ -8,6 +8,7 @@ require 'capybara-webkit'
 require 'selenium-webdriver'
 require 'cucumber'
 
+
 module Helpers
 
 #Which URL, driver(capy,webkit, selenium) should hit defined here
@@ -16,19 +17,13 @@ module Helpers
     CAPY_JAVASCRIPT_DRIVER = BrowserControl['capybara_javascript_driver'].to_sym
 
 
-# https comes with an error of "ssl handshake fails" with webkit. To get around the error following lines added
-    # Capybara.register_driver :webkit_ignore_ssl do |app|
-    #     browser = Capybara::Webkit::Browser.new(Capybara::Webkit::Connection.new).tap do |browser|
-    #     browser.ignore_ssl_errors
-    # end
-    # Capybara::Webkit::Driver.new(app, :browser => browser)
-    # end
-
-#headless
+$webkit_server = Capybara::Webkit::Server.new
+$webkit_connection = Capybara::Webkit::Connection.new(server: $webkit_server)
+$webkit_browser = Capybara::Webkit::Browser.new($webkit_connection)
+$webkit_browser.allow_unknown_urls
 Capybara.register_driver :webkit do |app|
-    Capybara::Webkit::Driver.new(app, :browser => :webkit)
+    Capybara::Webkit::Driver.new(app, :browser => $webkit_browser)
 end
-
 
 # To use chrome
 Capybara.register_driver :selenium_chrome do |app|
@@ -49,11 +44,6 @@ end
     end
 
 # Defining 
-#Selenium::WebDriver::Firefox::Binary.path = "~/Applications/Firefox"
-    # dddd = Selenium::WebDriver.for :firefox, marionette: true
-    # Capybara.app_host = 'http://google.com'
-    # Capybara.default_driver = dddd
-    #Capybara.javascript_driver = dddd
     Capybara.app_host = BASE_URL
     Capybara.default_driver = CAPY_DEFAULT_DRIVER
     Capybara.javascript_driver = CAPY_JAVASCRIPT_DRIVER

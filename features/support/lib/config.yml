@@ -11,11 +11,11 @@ next: {
     cvv: '123',
     password: 'Test1234x',
     user01: 'qa+1@farmdrop.co.uk',
-    name01: 'I_am',
-    sur_name01: '_one',
+    name01: 'one',
+    sur_name01: 'I_am',
     user02: 'qa+2@farmdrop.co.uk',
-    name02: 'I_am',
-    sur_name02: '_two',
+    name02: 'two',
+    sur_name02: 'I_am',
     post_code: 'SE164DG'
 }
 

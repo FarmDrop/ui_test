@@ -7,7 +7,7 @@ module LoginSteps
         click_on 'Sign up or Log in' unless @url_login.to_s.include?('login')
         fill_in('email', :with => name)
         fill_in('password', :with => password)
-        find(:button, 'Let me see the goods').click
+        find(:button, 'Log in').click
         sleep 1
     end
 
@@ -25,6 +25,7 @@ module LoginSteps
         fill_in('user[password]', :with => password)
         fill_in('user[zipcode]', :with => postcode)
         find(:button, 'Let\'s fix the food chain').click
+        sleep 1
     end
 
     def logout
