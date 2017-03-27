@@ -1,0 +1,16 @@
+headless:    {
+    capybara_default_driver: 'webkit',
+    capybara_javascript_driver: 'webkit'
+}
+ff:    {
+    capybara_default_driver: 'selenium',
+    capybara_javascript_driver: 'selenium'
+}
+chrome:    {
+    capybara_default_driver: 'selenium_chrome',
+    capybara_javascript_driver: 'selenium_chrome'
+}
+safari:    {
+    capybara_default_driver: 'selenium_safari',
+    capybara_javascript_driver: 'selenium_safari'
+}
